@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PathForge Dashboard</title>
+
+    <link rel="stylesheet" href="css/pfstyle.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <div class="logo-section">
+
+            <img
+                src="images/logo.jpeg"
+                alt="Logo"
+                class="logo"
+            >
+
+            <h2>PathForge</h2>
+
+        </div>
+
+        <!-- CREATE -->
+
+        <div class="menu-section">
+
+            <h3>CREATE</h3>
+
+            <button
+                class="sidebar-btn"
+                onclick="addNode()"
+            >
+                ➕ Add Node
+            </button>
+<!-- 
+            <button class="sidebar-btn">
+                🔗 Connect Nodes
+            </button> -->
+
+        </div>
+
+        <!-- ACTIONS -->
+
+        <div class="menu-section">
+
+            <h3>ACTIONS</h3>
+
+            <!-- <button class="sidebar-btn">
+                💾 Save Roadmap
+            </button> -->
+
+            <button
+    class="sidebar-btn"
+    onclick="saveRoadmap()"
+>
+    💾 Save Roadmap
+</button>
+
+            <!-- <button class="sidebar-btn">
+                📂 Load Roadmap
+            </button> -->
+
+           
+
+            <button
+    class="sidebar-btn"
+    onclick="clearCanvas()"
+>
+     🗑️ Clear Canvas
+</button>
+
+
+
+<button
+    class="sidebar-btn"
+    onclick="toggleNotesPanel()"
+>
+    📝 Notes
+</button>
+
+        </div>
+
+        <!-- LEGEND -->
+
+        <div class="legend-section">
+
+            <h3>LEGEND</h3>
+
+            <p>🔵 To Learn</p>
+
+            <p>🟡 In Progress</p>
+
+            <p>🟢 Completed</p>
+
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+<h2 id="roadmapTitle">
+
+    My Learning Roadmap
+
+</h2>
+            <div class="topbar-actions">
+
+                <div id="usernameDisplay"
+         class="username-box">
+
+    </div>
+
+
+                
+                <button
+    class="top-btn"
+    onclick="saveRoadmap()"
+>
+    Save
+</button>
+                <!-- <button class="top-btn">
+                    Load
+                </button> -->
+
+                <button
+    class="top-btn"
+    onclick="logout()"
+>
+    Logout
+</button>
+<!-- 
+                <div class="profile">
+                    👤 User
+                </div> -->
+
+            </div>
+
+        </div>
+
+        <!-- ROADMAP CANVAS -->
+
+        <div id="canvas">
+
+            <div class="canvas-text">
+                Start Building Your Roadmap 🚀
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- NOTES PANEL -->
+
+<div id="notesPanel"
+     class="notes-panel">
+
+    <div class="notes-header">
+
+        <h2>My Notes</h2>
+
+        <button
+            class="close-notes"
+            onclick="toggleNotesPanel()"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <!-- ADD NOTE -->
+
+    <div class="notes-input-area">
+
+        <textarea
+            id="noteInput"
+            placeholder="Write your notes..."
+        ></textarea>
+
+        <button onclick="saveNote()">
+
+            Add Note
+
+        </button>
+
+    </div>
+
+    <!-- NOTES LIST -->
+
+    <div id="notesList">
+
+    </div>
+
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.6/js/jsplumb.min.js"></script>
+
+<script src="js/roadmap.js"></script>
+
+   
+</body>
+</html>
